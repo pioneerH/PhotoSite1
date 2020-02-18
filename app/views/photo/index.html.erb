@@ -24,14 +24,14 @@
       <% @comments.each do |comment| %>
         <div>
           <ul>
-          <li>
-            "<%= comment.comment_text %>"
-            -- By
-            <% @user = User.find(comment.user_id) %>
-            <%= link_to @user.first_name, {action: "index", :id => @user.id} %> <%= @user.last_name %>
-            on
-            <%= comment.date_time %>
-          </li>
+            <li>
+              "<%= comment.comment_text %>"
+              -- By
+              <% @user = User.find(comment.user_id) %>
+              <%= link_to @user.first_name, {action: "index", :id => @user.id} %> <%= @user.last_name %>
+              on
+              <%= comment.date_time %>
+            </li>
           </ul>
         </div>
       <% end %><br /><br />
