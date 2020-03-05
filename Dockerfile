@@ -1,9 +1,6 @@
 FROM ruby:2.3
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-        sqlite3-client \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y nodejs build-essential
 
 WORKDIR /usr/src/app
 COPY Gemfile* ./
